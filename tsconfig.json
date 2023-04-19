@@ -1,0 +1,23 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "compilerOptions": {
+    //解决类型"ImportMeta"上不存在属性"env"(Property 'env' does not exist on type 'ImportMeta')
+    "types": ["vite/client"],
+    ///这是用于忽略一个错误
+    "ignoreDeprecations": "5.0",
+    
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    //禁止检查没有vue项目都要有export
+    "esModuleInterop": false
+  },
+
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}
